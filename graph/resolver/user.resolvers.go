@@ -14,6 +14,10 @@ func (r *mutationResolver) CreateUser(ctx context.Context, data model.UserInput)
 	panic(fmt.Errorf("not implemented"))
 }
 
+func (r *mutationResolver) LogIn(ctx context.Context, data model.LogInInput) (*model.AuthPayload, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
 func (r *queryResolver) Profile(ctx context.Context) (*model.UserView, error) {
 	panic(fmt.Errorf("not implemented"))
 }

@@ -9,8 +9,8 @@ import (
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/clshu/gqlgen-todos/dbmgm"
-	"github.com/clshu/gqlgen-todos/graph"
 	"github.com/clshu/gqlgen-todos/graph/generated"
+	"github.com/clshu/gqlgen-todos/graph/resolver"
 	"github.com/joho/godotenv"
 )
 
@@ -34,7 +34,7 @@ func main() {
 		panic(err)
 	}
 
-	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}}))
+	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &resolver.Resolver{}}))
 
 	http.Handle("/tvu_playground", playground.Handler("GraphQL playground", gqlPath))
 	http.Handle(gqlPath, srv)

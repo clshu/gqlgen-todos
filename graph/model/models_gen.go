@@ -7,6 +7,11 @@ type AuthPayload struct {
 	Token string    `json:"token"`
 }
 
+type LogInInput struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
 type NewTodo struct {
 	Text   string `json:"text"`
 	UserID string `json:"userId"`
