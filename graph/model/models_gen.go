@@ -2,6 +2,8 @@
 
 package model
 
+import "github.com/kamva/mgm/v3"
+
 type AuthPayload struct {
 	User  *UserView `json:"user"`
 	Token string    `json:"token"`
@@ -25,11 +27,11 @@ type Todo struct {
 }
 
 type User struct {
-	ID        string `json:"id"`
-	FirstName string `json:"firstName"`
-	LastName  string `json:"lastName"`
-	Email     string `json:"email"`
-	Password  string `json:"password"`
+	mgm.DefaultModel `bson:",inline"`
+	FirstName        string `json:"firstName"`
+	LastName         string `json:"lastName"`
+	Email            string `json:"email"`
+	Password         string `json:"password"`
 }
 
 type UserInput struct {

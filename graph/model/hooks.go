@@ -9,9 +9,9 @@ import (
 // Creating : an preop to create hashed password and lower case email
 func (u *User) Creating() error {
 	// Call the DefaultModel Creating hook
-	// if err := u.DefaultModel.Creating(); err != nil {
-	// 	return err
-	// }
+	if err := u.DefaultModel.Creating(); err != nil {
+		return err
+	}
 
 	if u.Email != "" {
 		u.Email = strings.ToLower(u.Email)
