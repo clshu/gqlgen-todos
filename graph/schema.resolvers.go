@@ -11,7 +11,11 @@ import (
 	"github.com/clshu/gqlgen-todos/graph/model"
 )
 
-func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
+func (r *mutationResolver) CreateTodo(ctx context.Context, data model.NewTodo) (*model.Todo, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *mutationResolver) CreateUser(ctx context.Context, data model.UserInput) (*model.UserView, error) {
 	panic(fmt.Errorf("not implemented"))
 }
 
@@ -20,6 +24,10 @@ func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
 }
 
 func (r *queryResolver) Profile(ctx context.Context) (*model.UserView, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) Users(ctx context.Context) ([]*model.UserView, error) {
 	panic(fmt.Errorf("not implemented"))
 }
 

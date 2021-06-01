@@ -27,6 +27,13 @@ type User struct {
 	Password  string `json:"password"`
 }
 
+type UserInput struct {
+	FirstName string `json:"firstName"`
+	LastName  string `json:"lastName"`
+	Email     string `json:"email"`
+	Password  string `json:"password"`
+}
+
 type UserView struct {
 	ID        string `json:"id"`
 	FirstName string `json:"firstName"`

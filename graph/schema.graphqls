@@ -32,6 +32,7 @@ type AuthPayload {
 type Query {
   todos: [Todo!]!
   profile: UserView!
+  users: [UserView]!
 }
 
 input NewTodo {
@@ -39,6 +40,14 @@ input NewTodo {
   userId: String!
 }
 
+input UserInput {
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+}
+
 type Mutation {
-  createTodo(input: NewTodo!): Todo!
+  createTodo(data: NewTodo!): Todo!
+  createUser(data: UserInput!): UserView!
 }
